@@ -1,0 +1,25 @@
+.back-btn:hover {
+    background-color: #292929;
+    border-radius: 10px;
+}
+.back-btn:active{
+    background-color: #333;
+    border-radius: 10px;
+}
+.back-btn:focus{
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.create-btn:hover {
+    background-color: #272727;
+    border-radius: 10px;
+}
+.create-btn:active{
+    background-color: #333;
+    border-radius: 10px;
+}
+.create-btn:focus{
+    background-color: #333;
+    border-radius: 10px;
+}

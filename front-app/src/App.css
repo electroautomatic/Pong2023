@@ -1,0 +1,45 @@
+body {
+    background-color: #202020;
+    margin: 0;
+    font-family: 'Helvetica Neue', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    overflow: hidden;
+    scrollbar-base-color: #222;
+    scrollbar-highlight-color: #333;
+}
+
+::-webkit-scrollbar {display:none;}
+
+.blur {
+    filter: blur(5px);
+    opacity: 0.8;
+}
+
+/*img {*/
+/*    -webkit-animation: fadein .1s; !* Safari, Chrome and Opera > 12.1 *!*/
+/*    -moz-animation: fadein .1s; !* Firefox < 16 *!*/
+/*    animation: fadein .1s;*/
+/*}*/
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

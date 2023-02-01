@@ -1,0 +1,47 @@
+version: '3.0'
+
+services:
+  nest:
+    container_name: nest
+    build:
+      context: ./backend-app/server
+    ports:
+      - 3001:3001
+      - 3002:3002
+      - 9229:9229
+      - 3004:5555
+    env_file:
+      - ./backend-app/server/.env
+    command: ["sh", "run.sh"]
+    depends_on:
+      - postgres
+    restart: always
+
+  react:
+    container_name: react
+    build:
+      context: ./front-app
+    ports:
+      - '3000:3000'
+    depends_on:
+      - nest
+    restart: always
+  
+  postgres:
+    container_name: postgres
+    # образ
+    image: postgres
+    # политика перезапуска
+    restart: on-failure
+    # файл с переменными среды окружения
+    env_file:
+      - .env
+    # порты
+    ports:
+      - 5432:5432
+    # тома для постоянного хранения данных
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+
+volumes:
+  postgres-data:

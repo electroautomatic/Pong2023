@@ -1,0 +1,12 @@
+.search-bar {
+    margin-bottom: 5px;
+}
+
+.add-group-btn:hover {
+    background-color: #272727;
+    border-radius: 10px;
+}
+.add-group-btn:active{
+    background-color: #333;
+    border-radius: 10px;
+}

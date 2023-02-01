@@ -1,0 +1,37 @@
+.contact-box:hover {
+    background-color: #272727;
+    border-radius: 10px;
+}
+.contact-box:active{
+    background-color: #333;
+    border-radius: 10px;
+}
+.contact-box:focus{
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.contact-box {
+    -webkit-animation: fadein .1s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: fadein .1s; /* Firefox < 16 */
+    animation: fadein .1s;
+}
+
+
+
+@keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Firefox < 16 */
+@-moz-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+/* Safari, Chrome and Opera > 12.1 */
+@-webkit-keyframes fadein {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}

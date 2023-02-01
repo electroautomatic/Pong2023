@@ -1,0 +1,84 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+  binaryTargets = ["native", "darwin"]
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id            Int     @unique @id
+  ecole42Id     Int     @unique
+  name  String? @unique
+  games Int @default(0)
+  wines Int @default(0)
+  loses Int @default(0)
+  level Float @default(0)
+  avatar String @default("msu.jpeg")
+  custom Boolean @default(false)
+  friends Int []
+  blackList Int []
+  chatId Int []
+  gameId Int []
+  twoFactorSecret String? 
+  twoFactorEnabled Boolean @default(false)
+  mail  String @default("youdonthave@mail.de")
+  achievementsId Int[]
+}
+
+model Achievements{
+  id            Int     @default(autoincrement()) @id
+  name          String
+  description   String
+  key           Int     @unique
+}
+
+model Post {
+  id        Int      @default(autoincrement()) @id
+  title     String
+  content   String?
+  published Boolean? @default(false)
+  authorId  Int?
+}
+
+model Chat {
+  id           Int        @default(autoincrement()) @id
+  chat         Boolean    @default(true)
+  public       Boolean    @default(true)
+  name         String?
+  requestPass  Boolean    @default(false) 
+  password     String?
+  participants Int[]
+  owner        Int[]
+  admins       Int[]
+  blackList    Int[]
+  muteList     Int[]
+  messages     Message[]
+}
+
+model Game {
+  id        Int      @default(autoincrement()) @id
+  player1id Int?
+  player2id Int?
+  winner    Int?
+  score1    Int?
+  score2    Int?
+  finished  Boolean @default(false)
+}
+
+model Message {
+  // chat_id   Int      @id @default(autoincrement())
+  id        Int      @id @default(autoincrement())
+  userId    Int       @default(0)
+  userName  String   @default("NoName")
+  text      String
+  createdAt DateTime @default(now())
+  Chat   Chat? @relation(fields: [ChatId], references: [id])
+  ChatId Int?
+}

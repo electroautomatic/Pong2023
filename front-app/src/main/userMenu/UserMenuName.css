@@ -1,0 +1,41 @@
+.user-menu-name-editable:hover {
+    border-radius: 10px;
+    background-color: #313131;
+}
+
+.user-menu-name-editable:active{
+    border-radius: 10px;
+    background-color: #444;
+}
+
+.user-menu-name-editable:focus {
+    border-radius: 10px;
+    background-color: #444;
+}
+
+.user-menu-avatar-edit-box:hover {
+    background-color: #666;
+}
+
+.user-menu-avatar-edit-box:active{
+    background-color: #888;
+}
+
+.user-menu-avatar-edit-box:focus {
+    background-color: #888;
+}
+
+
+[contenteditable="true"].user-menu-name-editable {
+    white-space: nowrap;
+    overflowX: hidden;
+    max-width: 240px;
+}
+[contenteditable="true"].user-menu-name-editable br {
+    display:none;
+
+}
+[contenteditable="true"].user-menu-name-editable * {
+    display:inline;
+    white-space:nowrap;
+}

@@ -1,0 +1,31 @@
+@keyframes rotate-tr {
+    0% {
+        transform: translateX(-.2rem) translateY(-0.5rem);
+    }
+    25% {
+         transform: translateX(6rem) translateY(-2.2rem);
+     }
+    50% {
+        transform: translateX(11.3rem) translateY(-0.5rem);
+    }
+    75% {
+        transform: translateX(6rem) translateY(1rem);
+    }
+    100% {
+        transform: translateX(-.2rem) translateY(-0.5rem);
+    }
+}
+
+
+
+@keyframes translate-vertical {
+    0% {
+        transform: translateY(-0.7rem);
+    }
+    50% {
+        transform: translateY(0.3rem);
+    }
+    100% {
+        transform: translateY(-0.7rem);
+    }
+}

@@ -1,0 +1,42 @@
+.nav-box-focus {
+    background-color: #242424
+}
+
+.send-btn:hover {
+    background-color: #272727;
+    border-radius: 10px;
+}
+.send-btn:active{
+    background-color: #333;
+    border-radius: 10px;
+}
+.send-btn:focus{
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.nav-box-focus:hover {
+    background-color: #272727;
+    border-radius: 10px;
+}
+.nav-box-focus:active{
+    background-color: #333;
+    border-radius: 10px;
+}
+
+.chat-window {
+    -webkit-animation: chatViewAppear .10s; /* Safari, Chrome and Opera > 12.1 */
+    -moz-animation: chatViewAppear .10s; /* Firefox < 16 */
+    animation: chatViewAppear .1s;
+}
+
+@keyframes chatViewAppear {
+    0% {
+        opacity: 0;
+        transform: translateX(6rem);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
